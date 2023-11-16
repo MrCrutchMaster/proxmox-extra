@@ -27,3 +27,19 @@ qm create ${id} \
   --serial0 socket \
   --serial1 socket \
   --tablet 1
+
+ssh tc@<IP>
+pass: P@ssword
+
+./rploader.sh update now
+./rploader.sh fullupgrade now
+./rploader.sh satamap now
+./rploader.sh identifyusb now
+./rploader.sh serialgen DS918+
+./rploader.sh ext ds918p-7.1.1-42962 add https://raw.githubusercontent.com/pocopico/rp-ext/master/v9fs/rpext-index.json
+./rploader.sh ext ds918p-7.1.1-42962 add https://raw.githubusercontent.com/pocopico/rp-ext/master/redpill-acpid/rpext-index.json
+./rploader.sh backup
+./rploader.sh build ds918p-7.1.1-42962 withfriend
+
+
+

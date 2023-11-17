@@ -34,7 +34,7 @@ qm create ${id} \
 
 
 ssh tc@<IP>
-pass: P@ssword
+pass: P@ssw0rd
 
 ./rploader.sh update now
 ./rploader.sh fullupgrade now

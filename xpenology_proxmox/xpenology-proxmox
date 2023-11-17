@@ -28,6 +28,11 @@ qm create ${id} \
   --serial1 socket \
   --tablet 1
 
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+
 ssh tc@<IP>
 pass: P@ssword
 
@@ -41,6 +46,11 @@ pass: P@ssword
 ./rploader.sh backup
 ./rploader.sh build ds918p-7.1.1-42962 withfriend
 
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+
 
 proxmox hdd passthrough
 `100` - VMID
@@ -48,6 +58,24 @@ proxmox hdd passthrough
 
 `qm set 100 -scsi1 /dev/disk/by-id/ata-PLEXTOR_PX-128M5Pro_P02346116262`
 
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+
+ENABLE IOMMU for sata controller passthrought
+/etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on pcie_acs_override=downstream,multifunction"
+update-grub
+
+
+/etc/kernel/cmdline
+add "intel_iommu=on"
+ run "proxmox-boot-tool refresh"
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
 
 HDD Spindown is working within Proxmox
 

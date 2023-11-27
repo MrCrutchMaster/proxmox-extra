@@ -1,22 +1,34 @@
 SATA controller passthrough
 ---------------------------------------------------
 
-Best variant
+Tested on Proxmox 8.0.4 + Huananzhi X99-F8 + Xeon E5 2680 V4
 
+Tested on Proxmox 8.1.3 + Huananzhi X99-F8D Plus + 2*Xeon E5 2680 V4
 
 enable in grub
 ```
-nano /etc/default/grub
+>nano /etc/default/grub
 GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on pcie_acs_override=downstream,multifunction"
-update-grub
+>update-grub
 ```
 
 enable in kernel
 ``` 
-nano /etc/kernel/cmdline
+>nano /etc/kernel/cmdline
 intel_iommu=on
-proxmox-boot-tool refresh
+>proxmox-boot-tool refresh
 ```
+
+edit /etc/modules
+```
+>nano /etc/modules`
+vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd
+>update-initramfs -u -k all
+```
+
 reboot machine
 
 HDD passthrough

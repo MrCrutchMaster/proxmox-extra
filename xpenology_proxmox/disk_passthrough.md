@@ -1,6 +1,9 @@
 SATA controller passthrough
 ---------------------------------------------------
 
+Best variant
+
+
 enable in grub
 ```
 nano /etc/default/grub
@@ -14,11 +17,12 @@ nano /etc/kernel/cmdline
 intel_iommu=on
 proxmox-boot-tool refresh
 ```
+reboot machine
 
 HDD passthrough
 ---------------------------------------------------
 
-not all hdd functions will be supported
+Not all hdd functions will be supported
 ```
 100 - VMID 
 wwn-0x50023031000e1956 - disk id from ls -l /dev/disk/by-id/

@@ -1,7 +1,9 @@
 VM Create
 ---------------------------------------------------
 
-Tested on proxmox 8.0.4 and 8.1.3 on HUANANZHI X99 F8 + Xeon E5 2680 V4
+Tested on Proxmox 8.0.4 + Huananzhi X99-F8 + Xeon E5 2680 V4
+
+Tested on Proxmox 8.1.3 + Huananzhi X99-F8D Plus + 2*Xeon E5 2680 V4
 
 1. Download ARCLoader (https://github.com/AuxXxilium/arc/releases)
 

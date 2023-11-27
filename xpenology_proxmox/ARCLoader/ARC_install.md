@@ -1,7 +1,7 @@
 VM Create
 ---------------------------------------------------
 
-Tested on proxmox 8.0.4 on HUANANZHI X99 F8 + Xeon E5 2680 V4
+Tested on proxmox 8.0.4 and 8.1.3 on HUANANZHI X99 F8 + Xeon E5 2680 V4
 
 1. Download ARCLoader (https://github.com/AuxXxilium/arc/releases)
 
@@ -39,7 +39,7 @@ qm create ${id} \
   --tablet 1
 
 # import loader as disk and make it bootable
-qm importdisk ${id} /var/lib/vz/template/iso/arc-23.11.18.img local-zfs
+qm importdisk ${id} /var/lib/vz/template/iso/arc-23.11.182.img local-zfs
 qm set ${id} --sata0 local-zfs:vm-${id}-disk-0
 qm set ${id} --boot order='sata0'
 

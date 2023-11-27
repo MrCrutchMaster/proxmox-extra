@@ -49,7 +49,7 @@ qm set ${id} --onboot 1
 
 3. Passthrough disks/controllers
 
-see manual in dir above
+see [manual](https://github.com/MrCrutchMaster/different/blob/main/xpenology_proxmox/disk_passthrough.md)
 
 XPenology install 
 ---------------------------------------------------

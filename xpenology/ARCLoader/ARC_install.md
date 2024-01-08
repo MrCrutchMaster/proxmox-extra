@@ -41,7 +41,7 @@ qm create ${id} \
   --tablet 1
 
 # import loader as disk and make it bootable
-qm importdisk ${id} /var/lib/vz/template/iso/arc-23.11.182.img local-zfs
+qm importdisk ${id} /var/lib/vz/template/iso/arc-23.11.18.img local-zfs
 qm set ${id} --sata0 local-zfs:vm-${id}-disk-0
 qm set ${id} --boot order='sata0'
 
